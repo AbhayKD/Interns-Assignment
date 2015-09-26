@@ -1,0 +1,52 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'live-server' ]
+2 info using npm@2.14.2
+3 info using node@v4.0.0
+4 verbose install initial load of C:\Users\Abhz\AppData\Roaming\npm\package.json
+5 verbose readDependencies loading dependencies from C:\Users\Abhz\AppData\Roaming\npm\package.json
+6 silly cache add args [ 'live-server', null ]
+7 verbose cache add spec live-server
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'live-server',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'live-server',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed live-server@*
+10 verbose addNamed "*" is a valid semver range for live-server
+11 silly addNameRange { name: 'live-server', range: '*', hasData: false }
+12 silly mapToRegistry name live-server
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/live-server
+16 verbose addNameRange registry:https://registry.npmjs.org/live-server not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/live-server
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 7:30:20 PM
+20 verbose request id 06d9b61e24a4bd5b
+21 http request GET https://registry.npmjs.org/live-server
+22 verbose stack Error: error:0906D06C:PEM routines:PEM_read_bio:no start line
+22 verbose stack     at Error (native)
+22 verbose stack     at Object.createSecureContext (_tls_common.js:87:19)
+22 verbose stack     at Object.exports.connect (_tls_wrap.js:955:21)
+22 verbose stack     at Agent.createConnection (https.js:73:22)
+22 verbose stack     at Agent.createSocket (_http_agent.js:177:16)
+22 verbose stack     at Agent.addRequest (_http_agent.js:146:23)
+22 verbose stack     at new ClientRequest (_http_client.js:133:16)
+22 verbose stack     at Object.exports.request (http.js:31:10)
+22 verbose stack     at Object.exports.request (https.js:163:15)
+22 verbose stack     at Request.start (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:803:30)
+23 verbose cwd G:\Interns Assignment
+24 error Windows_NT 6.3.9600
+25 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "live-server"
+26 error node v4.0.0
+27 error npm  v2.14.2
+28 error error:0906D06C:PEM routines:PEM_read_bio:no start line
+29 error If you need help, you may report this error at:
+29 error     <https://github.com/npm/npm/issues>
+30 verbose exit [ 1, true ]

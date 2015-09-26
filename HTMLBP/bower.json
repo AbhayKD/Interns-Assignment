@@ -1,0 +1,25 @@
+{
+  "name": "HTMLBP",
+  "version": "0.0.0",
+  "authors": [
+    "Abhay Kumar Dekate <abhushinchan@gmail.com>"
+  ],
+  "description": "Assignment Tavisca",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "google-map": "GoogleWebComponents/google-map#~1.0.6",
+    "plottable": "~1.9.0",
+    "polymer": "Polymer/polymer#1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^1.1.0"
+  }
+}

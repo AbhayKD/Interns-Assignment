@@ -1,0 +1,22 @@
+{
+  "name": "Check",
+  "version": "0.0.0",
+  "authors": [
+    "Abhay Kumar Dekate <abhushinchan@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "plottable": "~1.9.0",
+    "polymer": "git://github.com/Polymer/polymer.git#~1.1.3"
+  },
+  "resolutions": {
+    "polymer": "1.0.0"
+  }
+}

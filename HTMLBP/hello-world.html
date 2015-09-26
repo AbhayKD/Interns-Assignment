@@ -1,0 +1,40 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="hello-world">
+  <style>
+  	h1{
+  		color:blue;
+  	}
+  </style>
+
+  <template>
+    <input type="text" value="{{firstName::input}}">
+    <h1>{{firstName}}</h1>
+    <h2>{{firstName}}</h2>
+<!--     <h3>{{fullName}}</h3>
+ -->  </template>
+  
+</dom-module>
+
+<script>
+	Polymer({
+		is: "hello-world",
+
+    properties: {
+      firstName: String,
+      lastName: {
+        type: String,
+        value: 'Dekate'
+      },
+      fullName: {
+        type: String,
+        computed: 'computeFullName(firstName, lastName)'
+      }
+    },
+
+    computeFullName: function(firstName, lastName){
+      return firstName + ' ' + lastName;
+    }
+	});
+</script>
+

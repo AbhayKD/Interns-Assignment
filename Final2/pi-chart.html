@@ -1,0 +1,116 @@
+<!-- All the imports -->
+<link rel="import" href="bower_components/polymer/polymer.html">
+<script src="bower_components/plottable/plottable.js"></script>
+<link rel="stylesheet" type="text/css" href="bower_components/plottable/plottable.css" />
+<script src="bower_components/d3/d3.js" charset="utf-8"></script>
+
+
+<dom-module id="pi-chart">
+
+		<style>
+			svg{
+				
+				margin-left:auto; 
+				margin-right:auto;
+				display: block;
+				width: 500px; 
+				height: 500px;
+			}
+		</style>
+		
+
+		<template>
+				<svg id="pieChart" ></svg>
+		</template>
+		
+		
+
+		<script>
+
+		Polymer({
+				
+				is: 'pi-chart',
+
+        created: function(){
+
+        },
+
+	   ready: function () {
+
+	       /* Getting data values from csv file */
+           d3.csv("database.csv", function(data) {
+                    data.forEach(function(d) {
+                    d.val = +d.val;
+		          });
+
+	      
+
+
+           /*Initializing all the elements*/
+           var scale = new Plottable.Scales.Linear(); 
+	       var plot = new Plottable.Plots.Pie();
+	       var colorScalePlot = new Plottable.Scales.Color();
+           var colorScaleLegends = new Plottable.Scales.Color();
+           var legend = new Plottable.Components.Legend(colorScaleLegends);
+
+
+           
+
+
+           /*Title and Subtitle*/
+           var title = new Plottable.Components.TitleLabel("Pie-Chart");
+           var subtitle = new Plottable.Components.Label("Dataset Of Different Countries");
+
+          
+
+
+           /* Function to get the data values */ 
+	       function getXDataValue(d) {
+		      return d.val;
+		      }
+		
+	
+	       
+
+           /* Creating the plot for the pie-chart */
+	       plot.addDataset(new Plottable.Dataset(data))
+	       .labelsEnabled(true)
+	       .sectorValue(getXDataValue, scale)
+	       .attr("fill",getXDataValue, colorScalePlot);
+	
+	
+
+            /* Creating Legends For TextLabels */
+	
+	        colorScaleLegends.domain(["India","China","Brazil", "Australia", "Mexico"]);
+	        legend.xAlignment("right");
+	        legend.yAlignment("top");
+
+
+
+            /* Table For Title And Subtitle */
+            var titleTable = new Plottable.Components.Table([
+                                        [title],
+                                        [subtitle]
+                                    ]);
+            titleTable.xAlignment("center")
+            .yAlignment("top");
+	
+		
+		    
+
+            /* Putting all the elements together*/ 
+		    var chart = new Plottable.Components.Table([
+										[titleTable],
+										[legend],
+										[plot] 
+									]);
+		    chart.renderTo("#pieChart");
+		  });
+	   }
+
+    });
+					
+		</script>
+</dom-module>
+
